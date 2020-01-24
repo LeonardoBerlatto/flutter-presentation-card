@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'Pacifico'),
               ),
               Text(
-                defaultJobTitle,
+                defaultJobTitle.toUpperCase(),
                 style: TextStyle(
                     color: Colors.teal.shade100,
                     fontFamily: 'Source Sans Pro',
@@ -42,16 +42,23 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     letterSpacing: 2.5),
               ),
-              Container(
+              SizedBox(
+                height: 10,
+                width: 160,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.white,
-                child: Row(
+                child: Column(
                   children: <Widget>[
-                    Icon(Icons.phone, color: Colors.teal[700]),
-                    Container(
-                      margin: EdgeInsets.only(left: 8),
-                      child: Text(
+                    ListTile(
+                      leading: Icon(
+                        Icons.phone,
+                        color: Colors.teal[700],
+                      ),
+                      title: Text(
                         defaultPhoneNumber,
                         style: TextStyle(color: Colors.teal[700]),
                       ),
@@ -59,23 +66,23 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.white,
-                child: Row(
+                child: Column(
                   children: <Widget>[
-                    Icon(Icons.mail, color: Colors.teal[700]),
-                    Container(
-                      margin: EdgeInsets.only(left: 8),
-                      child: Text(
+                    ListTile(
+                      leading: Icon(
+                        Icons.mail,
+                        color: Colors.teal[700],
+                      ),
+                      title: Text(
                         defaultEmail,
                         style: TextStyle(color: Colors.teal[700]),
                       ),
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
