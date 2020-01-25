@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_card/components/info-card.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   static final double radiusUnitsToACircle = 50.0;
   static final String pathToProfilePicture = 'assets/profile_picture.jpeg';
   static final String defaultName = 'Leonardo Berlatto';
-  static final String defaultJobTitle = 'Fullstak Developer';
+  static final String defaultJobTitle = 'Fullstack Developer';
   static final String defaultPhoneNumber = '+55 51 997879607';
   static final String defaultEmail = 'leoberlatto@gamil.com';
 
@@ -42,47 +43,17 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     letterSpacing: 2.5),
               ),
-              SizedBox(
-                height: 10,
-                width: 160,
+              Container(
+                constraints: BoxConstraints.expand(
+                  height: 10,
+                  width: 150
+                ),
                 child: Divider(
                   color: Colors.teal.shade100,
                 ),
               ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      leading: Icon(
-                        Icons.phone,
-                        color: Colors.teal[700],
-                      ),
-                      title: Text(
-                        defaultPhoneNumber,
-                        style: TextStyle(color: Colors.teal[700]),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      leading: Icon(
-                        Icons.mail,
-                        color: Colors.teal[700],
-                      ),
-                      title: Text(
-                        defaultEmail,
-                        style: TextStyle(color: Colors.teal[700]),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              InfoCard(defaultPhoneNumber, Icons.phone),
+              InfoCard(defaultEmail, Icons.mail),
             ],
           ),
         ),
