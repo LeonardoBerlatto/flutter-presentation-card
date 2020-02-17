@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   static final String defaultName = 'Leonardo Berlatto';
   static final String defaultJobTitle = 'Fullstack Developer';
   static final String defaultPhoneNumber = '+55 51 997879607';
-  static final String defaultEmail = 'leoberlatto@gamil.com';
+  static final String defaultEmail = 'leoberlatto@gmail.com';
 
   @override
   Widget build(BuildContext context) {
